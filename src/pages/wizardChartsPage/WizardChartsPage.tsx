@@ -8,6 +8,7 @@ import DateRangeInput from "../../components/global/dateRangeInput/DateRangeInpu
 import logo from "../../assets/harryPotter.png";
 import { WisardsInfoService } from "src/services/wizardsInfoService";
 import { Navigate } from "react-router-dom";
+import ErrorExample from "src/errors/errorExample/errorExample";
 
 interface Character {
 	id: string;
@@ -17,7 +18,7 @@ interface Character {
 	wizard: boolean; // Добавляем свойство 'wizard' типа boolean для проверки, волшебник ли
 }
 
-const Main: FC = () => {
+const WizardChartsPage: FC = () => {
 	const [isAllChoiced, setAllChoiced] = useState(true);
 	const [isWizardsChoiced, setWizardsChoiced] = useState(false);
 	const [isFilteredWizardsChoiced, setFilteredWizardsChoiced] = useState(false);
@@ -119,6 +120,7 @@ const Main: FC = () => {
 					setWizardsChoiced={setWizardsChoiced}
 					setFilteredWizardsChoiced={setFilteredWizardsChoiced}
 				/>
+				<ErrorExample />
 				<div
 					style={{
 						display: "flex",
@@ -134,4 +136,4 @@ const Main: FC = () => {
 	);
 };
 
-export default Main;
+export default WizardChartsPage;
