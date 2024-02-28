@@ -1,0 +1,75 @@
+.Choice {
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+}
+
+.Choice .All,
+.Choice .Wizards,
+.Choice .FilteredWizards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 8px 16px;
+	border-radius: 4px;
+	background-color: #f0f0f0;
+	cursor: pointer;
+	border: none;
+	background: #020024;
+	background: linear-gradient(90deg, #020024 0%, #a5a5e3 0%, #00d4ff 100%);
+}
+
+.Choice .All:hover,
+.Choice .Wizards:hover,
+.Choice .FilteredWizards:hover,
+.Choice .All:focus,
+.Choice .Wizards:focus,
+.Choice .FilteredWizards:focus {
+	background: #020024;
+	background: linear-gradient(90deg, #020024 0%, #020216 0%, #00d4ff 100%);
+	color: aqua;
+	border: none;
+}
+
+.Choice .All.All,
+.Choice .Wizards.All,
+.Choice .FilteredWizards.All {
+	color: blue;
+}
+
+.Choice .All.Wizards,
+.Choice .Wizards.Wizards,
+.Choice .FilteredWizards.Wizards {
+	color: green;
+}
+
+.Choice .All.FilteredWizards,
+.Choice .Wizards.FilteredWizards,
+.Choice .FilteredWizards.FilteredWizards {
+	color: purple;
+}
+
+.Choice .All:active,
+.Choice .Wizards:active,
+.Choice .FilteredWizards:active {
+	background: #ffffff;
+	background: linear-gradient(90deg, #ffffff 0%, #020216 0%, #00d4ff 100%);
+	color: white;
+}
+
+.Choice .All:focus,
+.Choice .Wizards:focus,
+.Choice .FilteredWizards:focus {
+	background: #ffffff;
+	background: linear-gradient(90deg, #ffffff 0%, #020216 0%, #00d4ff 100%);
+	color: white;
+}
+
+.Choice .All:hover,
+.Choice .Wizards:hover,
+.Choice .FilteredWizards:hover {
+	background: #ffffff;
+	background: linear-gradient(90deg, #ffffff 0%, #020216 0%, #00d4ff 100%);
+	color: white;
+}

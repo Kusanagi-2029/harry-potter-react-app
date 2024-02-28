@@ -1,0 +1,7 @@
+@font-face {
+	font-family: "HarryPotterRuFont";
+	src: url("../fonts/harrypotterrussianversionofgfdtk.ttf");
+}
+body {
+	font-family: "HarryPotterRuFont", sans-serif;
+}
