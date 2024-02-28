@@ -291,7 +291,7 @@ fetch простой с помощью Axios, wizardsInfoService.ts:
 > [!NOTE]
 > Useful information that users should know, even when skimming content. Nginx в качестве сервера нам нужен, чтобы отдавать пользователяю статических html-файлов, скомпилированных после билда проекта.
 > [!NOTE]
-> > У Nginx перед тем же Apache есть преимущество в виде асинхронного выполнения наподобие event Lool Node'ы.
+> > У Nginx перед тем же Apache есть преимущество в виде асинхронного выполнения наподобие event Loop Node'ы.
 
 ### Docker
 > [!NOTE]
