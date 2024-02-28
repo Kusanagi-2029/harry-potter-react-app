@@ -1,0 +1,55 @@
+.app {
+	width: 100%;
+	min-width: 144px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	display: flex;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	background: rgb(34, 193, 195);
+	background: radial-gradient(
+		circle,
+		rgba(34, 193, 195, 1) 0%,
+		rgba(45, 126, 253, 1) 100%
+	);
+
+	@media only screen and (max-height: 650px) {
+		height: 110%;
+	}
+
+	@media only screen and (max-height: 500px) {
+		height: 135%;
+	}
+
+	@media only screen and (max-height: 400px) {
+		height: 175%;
+	}
+
+	@media only screen and (max-height: 300px) {
+		height: 240%;
+	}
+}
+
+@font-face {
+	font-family: "HarryPotterRuFont";
+	src: url("../src/assets/fonts/harrypotterrussianversionofgfdtk.ttf");
+}
+
+body,
+h1,
+h2,
+h3,
+div,
+span,
+p,
+a {
+	font-family: "HarryPotterRuFont", sans-serif;
+}
+
+button {
+	font-family: 200;
+	font-family: "HarryPotterRuFont", sans-serif;
+}

@@ -1,0 +1,59 @@
+.error {
+	background: rgb(63, 94, 251);
+	background: radial-gradient(
+		circle,
+		rgba(63, 94, 251, 1) 0%,
+		rgba(252, 70, 107, 1) 100%
+	);
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+}
+
+.errorHeader {
+	margin: 20px 20px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+
+	background: -webkit-radial-gradient(
+		circle,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(0, 0, 0, 1) 0%,
+		rgba(35, 49, 149, 1) 55%,
+		rgba(70, 0, 110, 1) 100%
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.errorcontainer {
+	padding: 8px;
+	max-width: 100%;
+}
+
+.errorLogo {
+	width: 100%;
+	max-width: 600px;
+	height: auto;
+}
+
+@media only screen and (max-width: 144px) {
+	.errorHeader {
+		margin: 0;
+		font-size: 0.4rem;
+	}
+	.errorLogo {
+		max-width: 120px;
+	}
+
+	.errorcontainer {
+		padding: 0;
+	}
+}
