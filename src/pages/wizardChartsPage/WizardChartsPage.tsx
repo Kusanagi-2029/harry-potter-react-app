@@ -18,7 +18,7 @@ interface Character {
 	wizard: boolean; // Добавляем свойство 'wizard' типа boolean для проверки, волшебник ли
 }
 
-const Main: FC = () => {
+const WizardChartsPage: FC = () => {
 	const [isAllChoiced, setAllChoiced] = useState(true);
 	const [isWizardsChoiced, setWizardsChoiced] = useState(false);
 	const [isFilteredWizardsChoiced, setFilteredWizardsChoiced] = useState(false);
@@ -136,4 +136,4 @@ const Main: FC = () => {
 	);
 };
 
-export default Main;
+export default WizardChartsPage;
