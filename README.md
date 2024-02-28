@@ -1,5 +1,10 @@
-# Начало работы
+# Начало работы с приложением
 
+## Демо
+> [!TIP]
+> https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/73b64965-dd4c-4865-b50d-62f83abb15a4
+
+## How-to
 1. На главной странице при входе в приложение (.../mainPage) Наведитесь на кликабельную зону и перейдите на страницу выбора дат (.../wizardChartsPage).
    ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/ba830032-c572-4667-bd8c-60e23f093a10)
 
