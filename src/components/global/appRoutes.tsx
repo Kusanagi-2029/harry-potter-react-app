@@ -5,7 +5,7 @@ import Error403 from "src/pages/errorPages/error403";
 import Error404 from "src/pages/errorPages/error404";
 import Error500 from "src/pages/errorPages/error500";
 import ErrorsBoundary from "src/errors/errorBoundary";
-import YTVideoWrapper from "src/pages/yTVideoWrapper/YTVideoWrapper";
+import YTVideoWrapperPage from "src/pages/yTVideoWrapperPage/YTVideoWrapper";
 import WizardChartsPage from "src/pages/wizardChartsPage/WizardChartsPage";
 import {
 	default as Error503,
@@ -20,18 +20,18 @@ const AppRoutes = () => {
 			<Route path="/error500" element={<Error500 />} />
 			<Route path="/error503" element={<Error503 />} />
 			<Route path="/error_not_responding" element={<ErrorNotResponding />} />
-			<Route path="mainPage" element={<YTVideoWrapper />} />
+			<Route path="mainPage" element={<YTVideoWrapperPage />} />
 			<Route path="wizardChartsPage" element={<WizardChartsPage />} />
 			<Route path="*" element={<Error404 />} />
 			<Route
 				path="/"
 				element={
 					<ErrorsBoundary>
-						<YTVideoWrapper />
+						<YTVideoWrapperPage />
 					</ErrorsBoundary>
 				}
 			>
-				<Route index element={<YTVideoWrapper />} />
+				<Route index element={<YTVideoWrapperPage />} />
 			</Route>
 		</Routes>
 	);
