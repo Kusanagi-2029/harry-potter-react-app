@@ -1,8 +1,118 @@
 # Начало работы
 
 1. На главной странице при входе в приложение (.../mainPage) Наведитесь на кликабельную зону и перейдите на страницу выбора дат (.../wizardChartsPage).
-2. На самой странице выбора дат (.../wizardChartsPage) вы можете увидеть самую первую круговую диаграмму типа _"Пирог"_, в котоую записаны все факультеты, без фильтра - там и маги, и люди.
+   ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/ba830032-c572-4667-bd8c-60e23f093a10)
 
+2. На самой странице выбора дат (.../wizardChartsPage) вы можете увидеть самую первую круговую диаграмму типа _"Пирог"_, в котоую записаны все факультеты, без фильтра - там и маги, и люди.
+**Для диаграмм была выбрана библиотека** [chart.js](https://www.chartjs.org/docs/latest/getting-started/usage.html)
+ ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/beda0a6a-96fb-49d5-85cc-ab7555e85000)
+
+3. Есть кнопки, переключающие диаграммы в зависимости от фильтрации пришедших данных:
+> [!TIP]
+> Приложение предупреждает пользователя о необходимости ввода обеих дат.
+![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/650b3ca6-fc04-4088-9cd2-8b693a1f5cab)
+
+I) Даты можно вводить/очищать как вручную, так и выбирая
+    ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/9b0beadc-07ce-4215-9a57-0bf97b3ce7e6)
+
+II) После установки дат **обязательно нажать на кнопку "Выбрать"**:
+   ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/bc5e7bcf-1192-46df-bfb0-61de8ace1445)
+
+III) Если нет ничего по выставленному диапазону дат - приложение расформирует canvas-диаграмму и выведет соотв-ее сообщение:
+    ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/a60d2007-767d-427c-9d11-7343aa5d0909)
+
+IV) Доли диаграммы интерактивны - их можно включать/выключать и моментально видеть обновление диаграммы:
+   ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/7abbbe5c-7756-4918-9207-7a554acb76a6)
+
+   После отключения (с возможностью включить обратно при повторном нажатии):
+   ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/42444bbe-3a75-44a1-99e4-e66a6448981b)
+
+ ## Кнопки диаграмм
+ **ВСЕ** - все пользователи и полученного запроса, включая НЕмагов:
+ ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/2800dc58-6c54-42a3-8416-6982820aa502)
+
+**МАГИ** - все пользователи с параметром **wizard = true** - маги, в т.ч. БЕЗ факультетов:
+![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/1d4bdac0-a8fe-4db9-b28a-fb655d638885)
+
+**Зачисленные** - все пользователис параметром **wizard = true** и **house !== ""** - зачисленные МАГИ, их, естественно, меньше, т.к. отфильтрованы маги БЕЗ факультета:
+![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/57fcf410-557c-4fd3-b730-8e77aa33f270)
+
+ ## Кнопки Демонстрации отработки ошибок при роутинге и отлове ошибок при fetch:
+
+**Error500** - Осуществляет fetch по заведомо неверной ссылке:
+```tsx
+... errorExample.tsx:
+	/** ДЕМО отработки обработчика 500-ой */
+	const fetchData = async () => {
+		try {
+			/** Умышленно пытаемся получить данные по некорректной ссылке */
+			const data = await WisardsInfoService.getAllWisardsCorrupted();
+			setButtonPressed(true);
+			setDataLoaded(true);
+		} catch (error) {
+			setButtonPressed(false);
+			setDataLoaded(false);
+			console.error("Error fetching data:", error);
+		}
+	};
+...
+
+...wizardsInfoService.ts:
+
+	/** Некорректный запрос для примера отработки ошибки 500 */
+	async getAllWisardsCorrupted(): Promise<Character[]> {
+		const response = await axios.get(appsettings.urls.getAllWisardsBroken);
+		return response.data as Character[];
+	},
+...
+
+...appSettings.json:
+		"getAllWisardsBroken": "https://hp-api.onrender.com/фывы/testtesttestest11111111111"
+...
+```
+ Получается следующее: 
+ ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/6ec798dc-6a91-4c79-87b8-1f3bc31ef9ff)
+
+При ошибке отображается соответствующая ошибка, РОУТИНГ отработал - страница error500:
+![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/e816dc79-4231-4279-ac48-4325d15dfd38)
+
+**Error404** - Осуществляется переход на неизвестную приложению страницу:
+```tsx
+... errorExample.tsx:
+			{isButtonPressed && (
+				<Navigate to="/Страница_Ошибки404-Неизвестный_путь" replace />
+			)}
+
+			<p>Примеры отрабатывающих ошибок: </p>
+
+...
+			<button
+				className={classes.Error404}
+				onClick={() => {
+					setButtonPressed(!isButtonPressed);
+				}}
+			>
+				Error404
+			</button>
+...
+
+
+...appRoutes.tsx
+
+			<Route path="/error404" element={<Error404 />} />
+...
+			{/* Здесь определяется неизвестная страница */}
+			<Route path="*" element={<Error404 />} /> 
+
+```
+![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/3a08be77-fa02-4566-ac81-3171a2068dd6)
+
+> [!IMPORTANT]
+> Кроме всего прочего, страницы адаптивно отвёрстаны под разные разрешения и форматы, в т.ч. для мобильных устройств:
+> ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/a46a8c64-e9f6-42b2-8584-54fa076f2d70)
+> ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/d84f45f7-b2b9-4a46-b312-6ef29a3fe633)
+> ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/26becaf2-97d0-46ed-9d6e-80e5545b24ea)
+   
 # О технической реализации проекта
 
 Этот проект был сформирован [Create React App](https://github.com/facebook/create-react-app).
@@ -66,7 +176,7 @@ gzip_comp_level
 
 ### `yarn eject`
 
-**_НЕ ИСПОЛЬЗОВАТЬ_**
+> [!CAUTION]**_НЕ ИСПОЛЬЗОВАТЬ_**
 
 **Указание**: это одностороннее действие. Если вы используете команду `eject`, вам не вернутся обратно!\*\*
 
@@ -172,9 +282,9 @@ fetch простой с помощью Axios, wizardsInfoService.ts:
 ## Nginx & Docker
 
 ### Nginx
-
-> Nginx в качестве сервера нам нужен, чтобы отдавать пользователяю статических html-файлов, скомпилированных после билда проекта.
->
+> [!NOTE]
+> Useful information that users should know, even when skimming content. Nginx в качестве сервера нам нужен, чтобы отдавать пользователяю статических html-файлов, скомпилированных после билда проекта.
+> [!NOTE]
 > > У Nginx перед тем же Apache есть преимущество в виде асинхронного выполнения наподобие event Lool Node'ы.
 
 ### Docker
