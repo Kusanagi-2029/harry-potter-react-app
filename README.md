@@ -120,6 +120,16 @@ IV) Доли диаграммы интерактивны - их можно вк�
    
 # О технической реализации проекта
 
+## Git Flow
+> [!IMPORTANT]
+> Применён Git Flow:
+> ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/77b725af-9cf7-4ffd-ae5d-346f4151b762)
+> В описании коммитов также можно видеть основы Git Flow:
+> ![image](https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/b8570915-4000-4f4d-9962-bebee5877c0e)
+
+## Основной стек 
+> REACT 18+, TypeSript, Chart.Js (Диаграммы), Less, Axios, остальное - в самой структуре/зависимостях проекта
+
 Этот проект был сформирован [Create React App](https://github.com/facebook/create-react-app).
 С добавлением в последующем инструментов через yarn-команды:
 
@@ -136,6 +146,8 @@ yarn add prettier
 yarn add --save-dev prettier
 yarn add eslint-config-airbnb --dev
 ```
+## State Managers
+Было решено обойтись без State Manager'a по принципам KISS|YAGNI
 
 ## Доступные Scripts
 
