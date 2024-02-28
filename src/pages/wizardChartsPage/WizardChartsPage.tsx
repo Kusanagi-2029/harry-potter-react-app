@@ -8,6 +8,7 @@ import DateRangeInput from "../../components/global/dateRangeInput/DateRangeInpu
 import logo from "../../assets/harryPotter.png";
 import { WisardsInfoService } from "src/services/wizardsInfoService";
 import { Navigate } from "react-router-dom";
+import ErrorExample from "src/errors/errorExample/errorExample";
 
 interface Character {
 	id: string;
@@ -119,6 +120,7 @@ const Main: FC = () => {
 					setWizardsChoiced={setWizardsChoiced}
 					setFilteredWizardsChoiced={setFilteredWizardsChoiced}
 				/>
+				<ErrorExample />
 				<div
 					style={{
 						display: "flex",

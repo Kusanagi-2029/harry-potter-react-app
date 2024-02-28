@@ -1,0 +1,71 @@
+.Buttons,
+p {
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+	color: black;
+	align-items: center;
+}
+
+.Buttons .Error500,
+.Buttons .Error404 {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 4px 8px;
+	border-radius: 4px;
+	background-color: #f0f0f0;
+	cursor: pointer;
+	border: none;
+	background: #020024;
+	background: linear-gradient(90deg, #020024 0%, #a5a5e3 0%, red 100%);
+}
+
+.Buttons .Error500:hover,
+.Buttons .Error404:hover,
+.Buttons .Error500:focus,
+.Buttons .Error404:focus {
+	background: #020024;
+	background: linear-gradient(90deg, #020024 0%, #020216 0%, red 100%);
+	color: aqua;
+	border: none;
+}
+
+.Buttons .Error500.Error500,
+.Buttons .Error404.Error500 {
+	color: blue;
+}
+
+.Buttons .Error500,
+.Buttons,
+.Buttons .Error404 {
+	color: green;
+}
+
+.Buttons .Error500.Error404,
+.Buttons .Error404,
+.Buttons .Error404.Error404 {
+	color: purple;
+}
+
+.Buttons .Error500:active,
+.Buttons .Error404:active {
+	background: #ffffff;
+	background: linear-gradient(90deg, #ffffff 0%, #020216 0%, red 100%);
+	color: white;
+}
+
+.Buttons .Error500:focus,
+.Buttons .Error404:focus {
+	background: #ffffff;
+	background: linear-gradient(90deg, #ffffff 0%, #020216 0%, red 100%);
+	color: white;
+}
+
+.Buttons .Error500:hover,
+.Buttons .Error404:hover {
+	background: #ffffff;
+	background: linear-gradient(90deg, #ffffff 0%, #020216 0%, red 100%);
+	color: white;
+}
