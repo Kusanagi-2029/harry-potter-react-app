@@ -1,6 +1,7 @@
 # Начало работы с приложением
 
 - [Начало работы с приложением](#begining)
+	- [Демонстрационное видео](#demo_video)
 	- [How-to](#how_to) 
 		- [Кнопки диаграмм](#diagrams_buttons) 
 		- [Кнопки Демонстрации отработки ошибок при роутинге и отлове ошибок при fetch](#demo_buttons)
@@ -15,7 +16,8 @@
 		- [Nginx](#nginx) 
 		- [Docker](#docker) 
 
-<a name="begining"><h2>Начало работы с приложением</h2></a>
+<a name="begining"><h1>Начало работы с приложением</h1></a>
+<a name="demo_video"><h2>Демонстрационное видео</h2></a>
 > [!TIP]
 > https://github.com/Kusanagi-2029/harry-potter-react-app/assets/71845085/73b64965-dd4c-4865-b50d-62f83abb15a4
 
